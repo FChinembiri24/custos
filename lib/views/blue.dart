@@ -58,7 +58,7 @@ class _BtDevicesState extends State<BtDevices> {
 
 
   Widget deviceName(ScanResult r) {
-    String name = '';
+    String name = 'mobile';
 
     if (r.device.name.isNotEmpty) {
 
@@ -66,10 +66,8 @@ class _BtDevicesState extends State<BtDevices> {
     } else if (r.advertisementData.localName.isNotEmpty) {
 
       name = r.advertisementData.localName;
-    } else {
-
-      name = 'N/A';
     }
+
     return Text(name);
   }
 

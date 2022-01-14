@@ -25,12 +25,12 @@ class _HomeState extends State<Home> {
             children: [
               DrawerHeader(
                 decoration: BoxDecoration(
-                    color: Colors.amberAccent,
+                    color: Colors.white,
 
-                    image: DecorationImage(image: AssetImage('assets/Custos.PNG',),
+                    image: DecorationImage(image: AssetImage('assets/Custos.png',),
                         fit: BoxFit.cover)
                 ),
-                child: Text("X-SYS"),
+                child: Text("Custos"),
               ),
 
               Padding(
