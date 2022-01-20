@@ -1,4 +1,5 @@
 import 'package:custos/views/blue.dart';
+import 'package:custos/views/report.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -33,18 +34,28 @@ class _HomeState extends State<Home> {
                 child: Text("Custos"),
               ),
 
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text("Dashboard"),
+              GestureDetector(
+                onTap: (){ Navigator.push(context, MaterialPageRoute(builder:(context)=> Home()));},
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text("Dashboard"),
+                ),
               ),
-
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text("crime updates"),
               ),
+
+              GestureDetector(
+                onTap: (){ Navigator.push(context, MaterialPageRoute(builder:(context)=> Report()));},
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text("Report"),
+                ),
+              ),
               GestureDetector(
                 onTap: () async {
-                  var whatsappUrl ="whatsapp://send?phone=263775611052";
+                  var whatsappUrl ="whatsapp://send?phone=263775325353";
                   if( await canLaunch(whatsappUrl)) {
                     launch(whatsappUrl);
                   }
@@ -125,8 +136,8 @@ class _HomeState extends State<Home> {
                                 Navigator.push(context, MaterialPageRoute(builder:(context)=> BtDevices()));
                               },
                               child: SizedBox(
-                                width:160.0,
-                                height: 160.0,
+                                width:MediaQuery.of(context).size.width*0.9,
+                                height: 260.0,
                                 child: Card(
 
                                   color: Colors.grey,
@@ -137,31 +148,37 @@ class _HomeState extends State<Home> {
                                   child:Center(
                                       child: Padding(
                                         padding: const EdgeInsets.all(8.0),
-                                        child: Column(
-                                          children: <Widget>[
-                                            Image.asset("assets/checkIn.png",width: 64.0,),
-                                            const SizedBox(
-                                              height: 10.0,
-                                            ),
-                                            const Text(
-                                              "get secured",
-                                              style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 20.0
+                                        child: Center(
+                                          child: Column(
+
+                                            children: <Widget>[
+                                              SizedBox(
+                                                height: 35,
                                               ),
-                                            ),
-                                            const SizedBox(
-                                              height: 5.0,
-                                            ),
-                                            const Text(
-                                              "",
-                                              style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontWeight: FontWeight.w100
+                                              Image.asset("assets/checkIn.png",width: 64.0,),
+                                              const SizedBox(
+                                                height: 10.0,
                                               ),
-                                            )
-                                          ],
+                                              const Text(
+                                                "get secured",
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 20.0
+                                                ),
+                                              ),
+                                              const SizedBox(
+                                                height: 5.0,
+                                              ),
+                                              const Text(
+                                                "",
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontWeight: FontWeight.w100
+                                                ),
+                                              )
+                                            ],
+                                          ),
                                         ),
                                       )
                                   ),
@@ -169,52 +186,7 @@ class _HomeState extends State<Home> {
                               ),
                             ),
 
-                            GestureDetector(
-                              onTap:(){} ,
-                              child: SizedBox(
-                                width:160.0,
-                                height: 160.0,
-                                child: Card(
 
-                                  color: Colors.grey,
-                                  elevation: 2.0,
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(8.0)
-                                  ),
-                                  child:Center(
-                                      child: Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Column(
-                                          children: <Widget>[
-                                            Image.asset("assets/schedule.png",width: 64.0,),
-                                            const SizedBox(
-                                              height: 10.0,
-                                            ),
-                                            const Text(
-                                              "Locations",
-                                              style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 20.0
-                                              ),
-                                            ),
-                                            const SizedBox(
-                                              height: 5.0,
-                                            ),
-                                            const Text(
-                                              "",
-                                              style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontWeight: FontWeight.w100
-                                              ),
-                                            )
-                                          ],
-                                        ),
-                                      )
-                                  ),
-                                ),
-                              ),
-                            ),
                           ],
                         ),
 

@@ -67,7 +67,8 @@ class _BtDevicesState extends State<BtDevices> {
 
       name = r.advertisementData.localName;
     }
-
+else
+  name='unknown device';
     return Text(name);
   }
 

@@ -1,5 +1,6 @@
 
 import 'package:custos/views/dashboard.dart';
+import 'package:custos/views/sb.dart';
 import 'package:flutter/material.dart';
 
 
@@ -134,6 +135,8 @@ class _LoginState extends State<Login> {
                     height: 100,
                     child: ElevatedButton(
                       onPressed: () {
+                        Navigator.pushReplacement(
+                            context, MaterialPageRoute(builder: (context) => SnackBarPage()));
 
                       },
                       child: const Text("Sign Up"),
